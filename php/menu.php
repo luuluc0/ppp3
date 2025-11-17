@@ -26,6 +26,8 @@ require "conexion.php";
     <?php if (!isset($_SESSION['logueado'])): ?>
         <div class="text-end">
             <a href="login.php" class="btn btn-primary">Iniciar Sesión</a>
+              <a class="btn btn-light boton-personalizado w-100" href="../index.php">INICIO.</a>
+    
         </div>
     <?php else: ?>
 

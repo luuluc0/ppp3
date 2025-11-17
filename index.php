@@ -46,7 +46,7 @@ if (!$conexion) {
           <div class="col-6">
             <div class="derecha d-flex flex-column gap-3">
               <a class="btn btn-light boton-personalizado w-100" href="#pg2">Quienes somos.</a>
-              <a class="btn btn-light boton-personalizado w-100" href="php/menu.php">Información sobre trayectos.</a>
+              <a class="btn btn-light boton-personalizado w-100" href="php/menu2.php">Información sobre trayectos.</a>
               <a class="btn btn-light boton-personalizado w-100" href="#pg4">Dirección.</a>
             </div>
           </div>
@@ -67,12 +67,14 @@ if (!$conexion) {
       <div class="col-1"></div>
       <div class="col-10 cuabrado1">
         <h2>¿Te gustaría saber quiénes somos?</h2>
+        
       </div>
       <div class="col-1"></div>
     </div>
 
     <div class="row">
-      <div class="col-4 cuabrado2">
+      <div class="col-1"></div>
+      <div class="col-3 cuabrado2">
         <p class="P">
           Somos un Centro de Formación Profesional N°61, una institución educativa
           que brinda cursos de formación profesional y capacitación laboral para
@@ -83,7 +85,14 @@ if (!$conexion) {
       <div class="col-1"></div>
 
       <div class="col-6 cuabrado3">
-        <p>hola</p>
+    <div style="position: center; width: 100%; height: 0; padding-top: 56.2500%;
+ padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+ border-radius: 8px; will-change: transform;">
+  <iframe loading="lazy" style="position: absolute; width: 100%; height: 0%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+    src="https://www.canva.com/design/DAG46grx_N8/cbzTbuwMkYO0JXyAk6LvLQ/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+  </iframe>
+</div>
+<a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAG46grx_N8&#x2F;cbzTbuwMkYO0JXyAk6LvLQ&#x2F;view?utm_content=DAG46grx_N8&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener"></a> 
       </div>
     </div>
 
@@ -97,45 +106,7 @@ if (!$conexion) {
 </section>
 
 <!-- SECCIÓN TRAYECTOS - PHP FUNCIONAL -->
-<section id="pg3" class="text-center py-5">
-  <img src="img/fondo1.png" alt="Fondo" class="fondo">
 
-  <div class="containe">
-    <div class="row">
-      <div class="col-12">
- 
-        <?php
-        $consulta = $conexion->query("SELECT * FROM trayectos ORDER BY id ASC");
-
-        if (!$consulta) {
-          echo "<p>Error al cargar trayectos.</p>";
-        } else {
-          if ($consulta->num_rows == 0) {
-            echo "<p>No hay trayectos cargados.</p>";
-          } else {
-            while ($fila = $consulta->fetch_assoc()) {
-              echo '<div class="cuabrado3 mb-3 p-3">';
-              echo "<h4>" . htmlspecialchars($fila['nombre']) . "</h4>";
-              echo "<p><strong>Día:</strong> " . htmlspecialchars($fila['dia']) . "</p>";
-              echo "<p><strong>Horario:</strong> " . htmlspecialchars($fila['hora']) . "</p>";
-              echo "<p>" . htmlspecialchars($fila['descripcion']) . "</p>";
-              echo '</div>';
-            }
-          }
-        }
-        ?>
-
-      </div>
-    </div>
-
-    <div class="row mt-3">
-      <div class="col-10"></div>
-      <div class="col-2">
-        <a class="btn btn-light boton-personalizado w-100" href="#inicio">INICIO.</a>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- SECCIÓN DIRECCIÓN -->
 <section id="pg4" class="text-center py-5">
