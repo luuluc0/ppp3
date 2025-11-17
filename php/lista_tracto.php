@@ -93,7 +93,7 @@ $mysqli->close();
     
     <hr>
     <p>
-        <a href="cargar_alumno_mysqli.php">Cargar Nuevo Alumno</a> | 
+        <a href="cargar_alumno_mysqli.php">Cargar Nuevo Alumno</a> 
         <a href="cargar_curso_mysqli.php">Cargar Nuevo Curso</a>
     </p>
 

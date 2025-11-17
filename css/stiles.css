@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  overflow: hidden; /* evita el scroll si no lo necesitás */
+  overflow:hidden; /* evita el scroll si no lo necesitás */
 }
 
 /* Imagen de fondo absoluta */
@@ -139,4 +139,93 @@ body:not(:has(:target)) #inicio {
   background-color: #007bff;
   color: white;
   box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4);
+}
+p{color: beige;
+font-size: large;
+margin-top: 10%;
+}
+
+
+/* 🟦 Contenedor completo del formulario */
+.form_contenedor {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+  /* Ajustes que podés modificar */
+  width: 100%;   
+  height: 100%;   
+}
+
+
+/* 🟦 Título del formulario */
+.form_titulo {
+  text-align: center;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* 🟦 Área del formulario */
+.form_cuerpo {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* 🟦 Grupo (input + label) */
+.form_grupo {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 🟦 Label */
+.form_label {
+  margin-bottom: 5px;
+  color: #555;
+  font-weight: bold;
+}
+
+/* 🟦 Input */
+.form_input {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form_input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* 🟦 Textarea */
+.form_textarea {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form_textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* 🟦 Botón */
+.form_boton {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.form_boton:hover {
+  background: #0056b3;
 }
