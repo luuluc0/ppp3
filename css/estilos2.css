@@ -8,3 +8,11 @@
     margin:5%;
 display: block;
 }
+
+body{color: azure;}
+
+.h1{
+    text-align: center;
+}
+
+.a{color:rebeccapurple;}

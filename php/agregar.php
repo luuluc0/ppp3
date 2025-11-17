@@ -18,6 +18,10 @@
 
     <textarea name="descripcion" placeholder="Descripción" required></textarea><br><br>
 
+<label for="img">URL de la imagen:</label><br>
+<input type="text" id="img" name="img" placeholder="http://ejemplo.com/imagen.jpg"><br><br>
+
+
     <button type="submit" name="agregar">Agregar</button>
     <a href="menu.php">Volver al menú</a>
 </form>
@@ -29,9 +33,11 @@ if (isset($_POST["agregar"])) {
     $dia = $_POST["dia"];
     $hora = $_POST["hora"];
     $descripcion = $_POST["descripcion"];
+     $img = trim($_POST['img']); // URL de la imagen
+     
 
-    $sql = "INSERT INTO trayectos (nombre, dia, hora, descripcion)
-            VALUES ('$nombre', '$dia', '$hora', '$descripcion')";
+    $sql = "INSERT INTO trayectos (nombre, dia, hora, descripcion, img)
+            VALUES ('$nombre', '$dia', '$hora', '$descripcion','$img')";
 
     if ($conexion->query($sql)) {
         echo "<p>Trayecto agregado correctamente.</p>";

@@ -60,6 +60,7 @@ require "conexion.php";
         <p><strong>Día:</strong> <?= $fila['dia'] ?></p>
         <p><strong>Horario:</strong> <?= $fila['hora'] ?></p>
         <p><?= $fila['descripcion'] ?></p>
+         <a><?= $fila['img'] ?></a>
     </div>
 
     <?php endwhile; endif; ?>
