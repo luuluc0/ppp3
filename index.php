@@ -39,7 +39,7 @@ if (!$conexion) {
               </div>
               <div class="redes d-flex gap-3 ">
               <a href="https://www.facebook.com/cfp61" class="a">facebook</a> 
-              <a href="https://www.instagram.com/cfp61lacriolla?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">instagram</a>
+              <a href="https://www.instagram.com/cfp61lacriolla?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="a">instagram</a>
               </div>
             </div>
           </div>

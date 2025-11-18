@@ -1,71 +1,64 @@
 <?php
 session_start();
-require_once("conexion.php"); // Carga seguraa
+require_once("conexion.php");
 
 if (!$conexion) {
-  die("Error: no se pudo conectar a la base de datos.");
+    die("Error: no se pudo conectar a la base de datos.");
 }
 ?>
 
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Trayectos</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/estilos2.css">
-  
 </head>
-<body class="fondoo"style="color: white;">
-    
+<body class="fondoo" style="color: white;">
 
+<div class="container cuadrado1 mt-4">
+    <div class="row mb-3">
+        <div class="col-8"></div>
+        <div class="col-4 text-end">
+            <a href="../index.php" class="btn btn-light mb-1">INICIO</a>
+            <a href="menu.php" class="btn btn-light mb-1">ADMIN</a>
+        </div>
+    </div>
 
+    <h1 class="text-center mb-4">Trayectos</h1>
 
-  <div class="container cuadrado1">
     <div class="row">
-      <div class="col-12 ">
- <h1 class="text-center">Trayectos.</h1>
-        <?php 
+        <?php
         $consulta = $conexion->query("SELECT * FROM trayectos ORDER BY id ASC");
 
         if (!$consulta) {
-          echo "<p>Error al cargar trayectos.</p>";
+            echo "<p>Error al cargar trayectos.</p>";
+        } elseif ($consulta->num_rows == 0) {
+            echo "<p class='text-center'>No hay trayectos cargados.</p>";
         } else {
-          if ($consulta->num_rows == 0) {
-            echo "<p >No hay trayectos cargados.</p>";
-          } else {
-            while ($fila = $consulta->fetch_assoc()) {
-              echo '<div class="cuabrado3 mb-3 p-3 pp">';
-              echo "<h4>" . htmlspecialchars($fila['nombre']) . "</h4>";
-              echo "<p><strong>Día:</strong> " . htmlspecialchars($fila['dia']) . "</p>";
-              echo "<p><strong>Horario:</strong> " . htmlspecialchars($fila['hora']) . "</p>";
-              echo "<p>" . htmlspecialchars($fila['descripcion']) . "</p>";
-              
-              echo '</div>';
-            }
-          }
+            while ($fila = $consulta->fetch_assoc()):
+        ?>
+        <div class="col-md-6 mb-4">
+            <div class="cuabrado3 p-3 pp">
+                <h4><?= htmlspecialchars($fila['nombre']) ?></h4>
+                <p><strong>Día:</strong> <?= htmlspecialchars($fila['dia']) ?></p>
+                <p><strong>Horario:</strong> <?= htmlspecialchars($fila['hora']) ?></p>
+                <p><?= htmlspecialchars($fila['descripcion']) ?></p>
+                <?php if (!empty($fila['img'])): ?>
+                    <img src="<?= htmlspecialchars($fila['img']) ?>" alt="Imagen del trayecto" class="img-fluid rounded mt-2 ">
+                <?php endif; ?>
+            </div>
+        </div>
+        <?php
+            endwhile;
         }
         ?>
-
-      </div>
     </div>
-
-    <div class="row mt-3">
-      <div class="col-10"></div>
-      <div class="col-2">
-      <a class="btn btn-light boton-personalizado w-100" href="../index.php">INICIO.</a>
-       <a class="btn btn-light boton-personalizado w-100" href="./menu.php">admin.</a>
-      
-    </div>
-    </div>
-  </div>
-
-
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>

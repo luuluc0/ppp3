@@ -3,7 +3,9 @@ body {
   padding: 0;
   overflow:hidden; /* evita el scroll si no lo necesitás */
 }
-
+.a{
+background-color: #b0d4f7;  
+}
 /* Imagen de fondo absoluta */
 .fondo {
   position: absolute;
